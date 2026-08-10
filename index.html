@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head ">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jo Music</title>
+    <center><h1>Jo Music</h1></center>
+    <table>
+      <tr>
+        <td><a href="#haris"><h2 ">Harris Hits</h2></a></td>
+        <td><a href="#yuvan"><h2 style="padding-left: 5px;"">Yuvan Hits</h2></a></td>
+        <td><a href="#anirudh"><h2 style="padding-left: 5px;">Anirudh Hits</h2></a></td>
+        <td><a href=""><h2></h2></a></td>
+      </tr>
+    </table>
+    
+        <style>
+        /* Sticky master audio bar styling */
+        .master-audio-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            padding: 15px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .master-audio-player {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+        }
+        .now-playing-text {
+            text-align: center;
+            font-size: 14px;
+            color: #1db954;
+            margin-bottom: 5px;
+            font-family: sans-serif;
+        }
+        /* Add some padding to the main container so content doesn't hide behind the player bar */
+        .container {
+            padding-bottom: 200px;
+        }
+        /* Style adjustments for playlist buttons */
+        
+        /* Update your card style to wrap and expand automatically */
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    height: auto;
+    color: white;
+    
+    padding: 15px;       /* Adds breathing room inside the border */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align:center ;
+    box-sizing: border-box; /* Crucial to keep padding from making card overflow */
+    overflow: hidden;       /* clips any rogue elements spilling outside */
+}
+.one{
+    width:50px;
+    border-radius: 10px;
+    
+}
+
+/* Ensure figure takes up full width for perfect alignment */
+figure {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Spaces out buttons row beautifully inside the box */
+.controls-row {
+    margin-top: auto;   /* Pushes row to the absolute bottom of the card */
+    padding-top: 1px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    width: 100%;
+}
+
+        .btn {
+            background-color: #222;
+            color: white;
+            border: 1px solid #444;
+            padding: 6px 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.2s;
+            
+        }
+        .btn:hover {
+            background-color: #1db954;
+            border-color: #1db954;
+        }
+    </style>
+</head>
+<body style="background-color:black; color:white;">
+
+
+    
+
+ <center>
+    <h2>Top 10 Trending Songs</h2>
+  </center>
+<div class="container">
+
+    <!-- Song 1 -->
+    <div class="card">
+        <img class="one" src="aura.jpeg" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Aura 10-10 Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Aura 10-10 Song', 'Aura 10-10.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Aura 10-10 Song', 'Aura 10-10.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Aura 10-10 Song', 'Aura 10-10.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-05 232657.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Ennamo Yeadho Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Ennamo Yeadho Song', 'Ennamo Yeadho.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Ennamo Yeadho Song', 'Ennamo Yeadho.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Ennamo Yeadho Song ', 'Ennamo Yeadho.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 174100.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Oyaayiye Yaayiye Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Oyaayiye Yaayiye Song', 'Oyaayiye Yaayiye.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Oyaayiye Yaayiye Song', 'Oyaayiye Yaayiye.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Oyaayiye Yaayiye Song', 'Oyaayiye Yaayiye.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-07 221840.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to KALYANI Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('KALYANI Song', 'KALYANI.mp3')">Play</button>
+                <button class="btn" onclick="playNext('KALYANI Song', 'KALYANI.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('KALYANI Song', 'KALYANI.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-07 215649.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to En-Rojaa-Neeye Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('En-Rojaa-Neeye Song', 'En-Rojaa-Neeye-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('En-Rojaa-Neeye Song', 'En-Rojaa-Neeye-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('En-Rojaa-Neeye Song', 'En-Rojaa-Neeye-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-05 235322.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Devathai Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Devathai Song', 'Devathai.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Devathai Song', 'Devathai.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Devathai Song', 'Devathai.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 4 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-07 221912.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to High-On-Love Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('High-On-Love Song', 'High-On-Love-MassTamilan.com.mp3')">Play</button>
+                <button class="btn" onclick="playNext('High-On-Love Song', 'High-On-Love-MassTamilan.com.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('High-On-Love Song', 'High-On-Love-MassTamilan.com.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 5 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 175605.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Roja-Kadale Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Roja-Kadale Song', 'Roja-Kadale.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Roja-Kadale Song', 'Roja-Kadale.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Roja-Kadale Song', 'Roja-Kadale.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 6 -->
+    
+
+    <!-- Song 7 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-07 215928.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Enthara-Enthara Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Enthara-Enthara Song', 'Enthara-Enthara.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Enthara-Enthara Song', 'Enthara-Enthara.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Enthara-Enthara Song', 'Enthara-Enthara.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 8 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 133740.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Katchi Sera Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Katchi Sera Song', 'Katchi Sera.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Katchi Sera Song', 'Katchi Sera.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Katchi Sera Song', 'Katchi Sera.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 9 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 133815.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Sithira-Puthiri Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Sithira-Puthiri Song', 'Sithira-Puthiri-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Sithira-Puthiri Song', 'Sithira-Puthiri-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Sithira-Puthiri Song', 'Sithira-Puthiri-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 10 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 142820.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Dheema Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Dheema Song', 'Dheema-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Dheema Song', 'Dheema-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Dheema Song', 'Dheema-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    
+ <section id="haris">
+  <center>
+    <h1>Harris Hits</h1>
+  </center>
+
+    <!-- paste your existing Harris song cards here -->
+     <div class="container">
+
+    <!-- Song 1 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-05 232657.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Amali Thumali Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Amali Thumali Song', 'Amali Thumali.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Amali Thumali Song', 'Amali Thumali.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Amali Thumali Song', 'Amali Thumali.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-05 232657.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Ennamo Yeadho Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Ennamo Yeadho Song', 'Ennamo Yeadho.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Ennamo Yeadho Song', 'Ennamo Yeadho.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Ennamo Yeadho Song ', 'Ennamo Yeadho.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 174100.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Oyaayiye Yaayiye Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Oyaayiye Yaayiye Song', 'Oyaayiye Yaayiye.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Oyaayiye Yaayiye Song', 'Oyaayiye Yaayiye.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Oyaayiye Yaayiye Song', 'Oyaayiye Yaayiye.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 174100.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Pala Palakura Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Pala Palakura Song', 'Pala Palakura.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Pala Palakura Song', 'Pala Palakura.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Pala Palakura Song', 'Pala Palakura.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 174100.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Nenje Nenje Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Nenje Nenje Song', 'Nenje Nenje.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Nenje Nenje Song', 'Nenje Nenje.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Nenje Nenje Song', 'Nenje Nenje.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 174543.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Hasili-Fisiliye Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Hasili-Fisiliye Song', 'Hasili-Fisiliye-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Hasili-Fisiliye Song', 'Hasili-Fisiliye-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Hasili-Fisiliye Song', 'Hasili-Fisiliye-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 4 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 175007.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to New York Nagaram Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('New York Nagaram Song', 'New York Nagaram.mp3')">Play</button>
+                <button class="btn" onclick="playNext('New York Nagaram Song', 'New York Nagaram.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('New York Nagaram Song', 'New York Nagaram.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 5 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 175605.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Roja-Kadale Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Roja-Kadale Song', 'Roja-Kadale.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Roja-Kadale Song', 'Roja-Kadale.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Roja-Kadale Song', 'Roja-Kadale.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 6 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 175605.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Thodu-Vaanam Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Thodu-Vaanam Song', 'Thodu-Vaanam.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Thodu-Vaanam Song', 'Thodu-Vaanam.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Thodu-Vaanam Song', 'Thodu-Vaanam.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 7 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 190417.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Mazhai-Vara-Pogudhe Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Mazhai-Vara-Pogudhe Song', 'Mazhai-Vara-Pogudhe.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Mazhai-Vara-Pogudhe Song', 'Mazhai-Vara-Pogudhe.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Mazhai-Vara-Pogudhe Song', 'Mazhai-Vara-Pogudhe.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 8 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 191226.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Yellae-Lama Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Yellae-Lama Song', 'Yellae-Lama.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Yellae-Lama Song', 'Yellae-Lama.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Yellae-Lama Song', 'Yellae-Lama.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 9 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 191839.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Enai-Saaithaalae Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Enai-Saaithaalae Song', 'Enai-Saaithaalae.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Enai-Saaithaalae Song', 'Enai-Saaithaalae.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Enai-Saaithaalae Song', 'Enai-Saaithaalae.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 10 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 192748.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Alaikaa-Laikaa Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Alaikaa-Laikaa Song', 'Alaikaa-Laikaa-MassTamilan.fm.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Alaikaa-Laikaa Song', 'Alaikaa-Laikaa-MassTamilan.fm.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Alaikaa-Laikaa Song', 'Alaikaa-Laikaa-MassTamilan.fm.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 11 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 192748.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Google-Google Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Google-Google  Song', 'Google-Google-MassTamilan.fm.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Google-Google  Song', 'Google-Google-MassTamilan.fm.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Google-Google  Song', 'Google-Google-MassTamilan.fm.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 12 -->
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 193745.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Annul-Maelae Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Annul-Maelae  Song', 'Annul-Maelae-MassTamilan.com.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Annul-Maelae  Song', 'Annul-Maelae-MassTamilan.com.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Annul-Maelae  Song', 'Annul-Maelae-MassTamilan.com.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 13 -->
+     
+    <!-- Song 14 -->
+     
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 194824.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Halena Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Halena Song', 'Halena.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Halena Song', 'Halena.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Halena Song', 'Halena.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    
+    <!-- Song 15 -->
+     
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 194824.png" alt="Aura Song">
+        <figcaption class="three"><h3>listen to Kannai-Vittu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Kannai-Vittu-Song', 'Kannai-Vittu.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Kannai-Vittu-Song', 'Kannai-Vittu.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Kannai-Vittu-Song', 'Kannai-Vittu.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    </div>
+
+
+
+</section>
+
+<section id="yuvan">
+  <center>
+    
+    
+    <h2 style="position: relative;top:210px">Yuvan Hits </h2>
+  </center>
+
+    <!-- paste your existing Yuvan song cards here -->
+<div  class="container"></div>
+
+    <!-- Song 1 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-05 233424.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Adada-Mazhaida Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Adada-Mazhaida Song', 'Adada-Mazhaida.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Adada-Mazhaida Song', 'Adada-Mazhaida.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Adada-Mazhaida Song', 'Adada-Mazhaida.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-05 233424.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Thuli-Thuli-Mazhaiyaai Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Thuli-Thuli-Mazhaiyaai Song', 'Thuli-Thuli-Mazhaiyaai.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Thuli-Thuli-Mazhaiyaai Song', 'Thuli-Thuli-Mazhaiyaai.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Thuli-Thuli-Mazhaiyaai Song', 'Thuli-Thuli-Mazhaiyaai.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 104646.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Andha-Kanna <br>Paathaakaa Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Andha-Kanna Paathaakaa Song', 'Andha-Kanna-Paathaakaa-MassTamilan.io.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Andha-Kanna Paathaakaa Song', 'Andha-Kanna-Paathaakaa-MassTamilan.io.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Andha-Kanna Paathaakaa Song', 'Andha-Kanna-Paathaakaa-MassTamilan.io.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 4 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 091238.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Meherezylaa Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Meherezylaa Song', 'Meherezylaa-MassTamilan.fm.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Meherezylaa Song', 'Meherezylaa-MassTamilan.fm.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Meherezylaa Song', 'Meherezylaa-MassTamilan.fm.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 5 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 091325.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Naanga-Vera-Maari Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Naanga-Vera-Maari Song', 'Naanga-Vera-Maari-MassTamilan.fm.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Naanga-Vera-Maari Song', 'Naanga-Vera-Maari-MassTamilan.fm.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Naanga-Vera-Maari Song', 'Naanga-Vera-Maari-MassTamilan.fm.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 6 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 091157.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Ek-Do-Theen Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Ek-Do-Theen Song', 'Ek-Do-Theen.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Ek-Do-Theen Song', 'Ek-Do-Theen.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Ek-Do-Theen Song', 'Ek-Do-Theen.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 7 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 091157.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Kadhal-Aasai Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Kadhal-Aasai Song', 'Kadhal-Aasai.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Kadhal-Aasai Song', 'Kadhal-Aasai.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Kadhal-Aasai Song', 'Kadhal-Aasai.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 8 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 091157.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Oru-Kan-Jaadai Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Oru-Kan-Jaadai Song', 'Oru-Kan-Jaadai.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Oru-Kan-Jaadai Song', 'Oru-Kan-Jaadai.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Oru-Kan-Jaadai Song', 'Oru-Kan-Jaadai.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 9 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 093717.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Ennai-Vittu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Ennai-Vittu Song', 'Ennai-Vittu-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Ennai-Vittu Song', 'Ennai-Vittu-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Ennai-Vittu Song', 'Ennai-Vittu-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 10 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 105057.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Iragai-Pole Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Iragai-Pole Song', 'Iragai-Pole.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Iragai-Pole Song', 'Iragai-Pole.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Iragai-Pole Song', 'Iragai-Pole.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 11 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 093806.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Dhavanipotta<br>Deepavali Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Dhavanipotta Deepavali  Song', 'Dhavanipotta-Deepavali.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Dhavanipotta Deepavali  Song', 'Dhavanipotta-Deepavali.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Dhavanipotta Deepavali  Song', 'Dhavanipotta-Deepavali.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 12 -->
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 162553.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Kaadhal Vaithu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Kaadhal Vaithu  Song', 'Kaadhal Vaithu.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Kaadhal Vaithu  Song', 'Kaadhal Vaithu.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Kaadhal Vaithu  Song', 'Kaadhal Vaithu.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 13 -->
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 163701.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Spark Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Spark Song', 'Spark.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Spark Song', 'Spark.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Spark Song', 'Spark.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 14 -->
+     
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 163811.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Per-Vachaalum-Vaikkaama Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Per-Vachaalum-Vaikkaama Song', 'Per-Vachaalum-Vaikkaama-MassTamilan.io.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Per-Vachaalum-Vaikkaama-Song', 'Per-Vachaalum-Vaikkaama-MassTamilan.io.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Per-Vachaalum-Vaikkaama-Song', 'Per-Vachaalum-Vaikkaama-MassTamilan.io.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    
+    <!-- Song 15 -->
+     
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-08 170032.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Kambathu-Ponnu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Kambathu-Ponnu-Song', 'Kambathu-Ponnu-MassTamilan.com.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Kambathu-Ponnu-Song', 'Kambathu-Ponnu-MassTamilan.com.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Kambathu-Ponnu-Song', 'Kambathu-Ponnu-MassTamilan.com.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    
+    
+    
+
+</div>
+
+</section>  
+<section id="anirudh">
+  <center>
+    <h1>Anirudh Hits</h1>
+  </center>
+
+    <!-- paste your existing Harris song cards here -->
+     <div class="container">
+
+    <!-- Song 1 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 151021.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Kannamma Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Kannamma Song', 'Kannamma-MassTamilan.org.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Kannamma Song', 'Kannamma-MassTamilan.org.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Kannamma Song', 'Kannamma-MassTamilan.org.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 151058.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Anbenum Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Anbenum Song', 'Anbenum-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Anbenum Song', 'Anbenum-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Anbenum Song ', 'Anbenum-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 151058.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Badass Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Badass Song', 'Badass-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Badass Song', 'Badass-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Badass Song', 'Badass-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 151115.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Arabic-Kuthu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Arabic-Kuthu Song', 'Arabic-Kuthu---Halamithi-Habibo-MassTamilan.so.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Arabic-Kuthu Song', 'Arabic-Kuthu---Halamithi-Habibo-MassTamilan.so.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Arabic-Kuthu Song', 'Arabic-Kuthu---Halamithi-Habibo-MassTamilan.so.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 152510.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Idhazhin-Oram Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Idhazhin-Oram Song', 'Idhazhin-Oram (1) (1).mp3')">Play</button>
+                <button class="btn" onclick="playNext('Idhazhin-Oram Song', 'Idhazhin-Oram (1) (1).mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Idhazhin-Oram Song', 'Idhazhin-Oram (1) (1).mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 152637.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Hukum-Thalaivar-Alappara Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Hukum---Thalaivar-Alappara Song', 'Hukum---Thalaivar-Alappara-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Hukum---Thalaivar-Alappara Song', 'Hukum---Thalaivar-Alappara-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Hukum---Thalaivar-Alappara Song', 'Hukum---Thalaivar-Alappara-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 4 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 152936.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Selfie-Pulla Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Selfie-Pulla Song', 'Selfie-Pulla.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Selfie-Pulla Song', 'Selfie-Pulla.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Selfie-Pulla Song', 'Selfie-Pulla.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 5 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 153410.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Udhungada Sangu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Udhungada Sangu Song', 'Udhungada Sangu.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Udhungada Sangu Song', 'Udhungada Sangu.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Udhungada Sangu Song', 'Udhungada Sangu.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 6 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 154051.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Hayyoda Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Hayyoda Song', 'Hayyoda-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Hayyoda Song', 'Hayyoda-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Hayyoda Song', 'Hayyoda-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 7 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 154600.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Jimikki-Ponnu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Jimikki-Ponnu Song', 'Jimikki-Ponnu-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Jimikki-Ponnu Song', 'Jimikki-Ponnu-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Jimikki-Ponnu Song', 'Jimikki-Ponnu-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 8 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 154957.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Monica Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Monica Song', 'Monica.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Monica Song', 'Monica.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Monica Song', 'Monica.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 9 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 154957.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Powerhouse Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Powerhouse Song', 'Powerhouse.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Powerhouse Song', 'Powerhouse.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Powerhouse Song', 'Powerhouse.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 10 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 155618.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Private-Party Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Private-Party Song', 'Private-Party-MassTamilan.dev.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Private-Party Song', 'Private-Party-MassTamilan.dev.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Private-Party Song', 'Private-Party-MassTamilan.dev.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Song 11 -->
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 160223.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Senjitaley Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Senjitaley  Song', 'Senjitaley.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Senjitaley  Song', 'Senjitaley.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Senjitaley  Song', 'Senjitaley.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 12 -->
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 160414.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to So-Baby Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('So-Baby  Song', 'So-Baby-MassTamilan.fm.mp3')">Play</button>
+                <button class="btn" onclick="playNext('So-Baby  Song', 'So-Baby-MassTamilan.fm.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('So-Baby  Song', 'So-Baby-MassTamilan.fm.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <!-- Song 13 -->
+     
+    <!-- Song 14 -->
+     
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 161025.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Takkunu-Takkunu Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Takkunu-Takkunu Song', 'Takkunu-Takkunu-MassTamilan.org.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Takkunu-Takkunu Song', 'Takkunu-Takkunu-MassTamilan.org.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Takkunu-Takkunu Song', 'Takkunu-Takkunu-MassTamilan.org.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    
+    <!-- Song 15 -->
+     
+     <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 161056.png" alt="Aura Song">
+        <figcaption class="three"><h3>listen to Thalapathy Kacheri Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Thalapathy Kacheri-Song', 'Thalapathy Kacheri.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Thalapathy Kacheri-Song', 'Thalapathy Kacheri.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Thalapathy Kacheri-Song', 'Thalapathy Kacheri.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+       <div class="card">
+        <img class="one" src="Screenshot 2026-08-07 220035.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Fear Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Fear Song', 'Fear Song.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Fear Song', 'Fear Song.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Fear Song', 'Fear Song.mp3')">+ Queue</button>
+            </div>
+        </figure>
+    </div>
+    <div class="card">
+        <img class="one" src="Screenshot 2026-08-09 230843.png" alt="Aura Song">
+        <figure>
+            <figcaption class="three"><h3>listen to Aaya-Sher Song</h3></figcaption>
+            <div class="controls-row">
+                <button class="btn" onclick="playNow('Aaya-Sher Song', 'Aaya-Sher-Anirudh-Ravichander-NaaSongs.mp3')">Play</button>
+                <button class="btn" onclick="playNext('Aaya-Sher Song', 'Aaya-Sher-Anirudh-Ravichander-NaaSongs.mp3')">Play Next</button>
+                <button class="btn" onclick="addToQueue('Aaya-Sher Song', 'Aaya-Sher-Anirudh-Ravichander-NaaSongs.mp3-Anirudh-Ravichander-NaaSongs.mp3')">+ Queue</button>
+            </div>
+        </figure> 
+    </div>
+
+
+
+</section>
+
+
+
+</div>
+
+<!-- The Single Universal Sticky Master Audio Deck -->
+<div class="master-audio-container">
+  <table>
+    <tr>
+      <td>
+  <a href="#haris"><h3>harris hits</h3></a>
+  </td>
+  <td><a href="#yuvan"><h3 style="padding-left: 5px;">yuvan hits</h3></a></td>
+  <td><a href="#anirudh"><h3 style="padding-left: 5px;">anirudh hits</h3></a></td>
+  </tr>
+  </table>
+    <div id="now-playing" class="now-playing-text">No track playing</div>
+    <audio id="global-player" class="master-audio-player" controls autoplay></audio>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
