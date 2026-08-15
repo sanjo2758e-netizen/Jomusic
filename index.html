@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jo Music</title>
     <center><h1>Jo Music</h1></center>
+    <div style="display:flex;flex-direction:row;gap:2px;align-items: center;justify-content: center;width: 100%;">
     <table>
-      <tr>
-        <td><a style="color: red;" href="#haris"><h2 >Harris Hits</h2></a></td>
-        <td><a  style="color: red;" href="#yuvan"><h2 style="padding-left: 5px;">Yuvan Hits</h2></a></td>
-        <td><a  style ="color:red;"href="#anirudh"><h2 style="padding-left: 5px;">Anirudh Hits</h2></a></td>
         
-      </tr>
       <tr>
-        <td><a style="color:red;" href="#abhyankkar"><h2 style="padding-left: 5px;"> Sai Abhyankkar Hits</h2></a></td>
+        <td><a  href="#haris" style="color: red;"><h2>Harris Hits</h2></a></td>
+        <td><a   href="#yuvan"style="color: red;"><h2 >Yuvan Hits</h2></a></td>
+        <td><a href="#anirudh"style="color: red;"><h2>Anirudh Hits</h2></a></td>
+      
       </tr>
+      
+     
+      
     </table>
     
+    </head>
+</div>
+    
+    
         <style>
-        /* Sticky master audio bar styling */
+            
+        /* Sticky mter audio bar styling */
         .master-audio-container {
             position: fixed;
             bottom: 0;
@@ -92,6 +99,16 @@ figure {
     gap: 6px;
     justify-content: center;
     width: 100%;
+}
+.ju{
+    margin-top: auto;   /* Pushes row to the absolute bottom of the card */
+    padding-top: 1px;
+    padding-bottom: 2px;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    width: 100%;
+
 }
 
         .btn {
@@ -1242,14 +1259,14 @@ figure {
   <table class="controls-row">
     <tr>
       <td>
-  <a  class="btn"style="position:relative;margin-left:40px;" href="#haris"> Harris Hits</a>
+  <a  class="btn" href="#haris"> Harris Hits</a>
   </td>
-  <td> <a class="btn" href="#yuvan"> Yuvan Hits</a></td>
+  <td> <a style="margin-right:1px;"class="btn" href="#yuvan"> Yuvan Hits</a></td>
 
-  <td><a class="btn" href="#anirudh">Anirudh Hits</a></td> </tr>
-   <tr>
-  <td> <a class="btn" style="position:relative ;top:10px;margin-left:40px;" href="#abhyankkar"> Abhyankkar Hits</a></td>      
-   </tr>      
+  <td><a style="margin-right:1px;"class="btn" href="#anirudh">Anirudh Hits</a></td> 
+   
+  <td> <a class="btn"  href="#abhyankkar"> Abhyankkar Hits</a></td>      
+    </tr>   
 
  
   </table>
